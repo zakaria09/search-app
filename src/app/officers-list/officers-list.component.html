@@ -1,0 +1,21 @@
+<a
+  class="back"
+  (click)="goBack()">
+  Back to company details
+</a>
+<div class="card">
+  <ng-container *ngFor="let company of ($companyInfo | async)?.items">
+    <div class="m-3">
+      <h1>{{ company.title }}</h1>
+      <span>Company number: <b>{{ companyNumber }}</b></span>
+    </div>
+  </ng-container>
+  <ng-container *ngFor="let officer of officersInfo">
+    <div class="card-body">
+      <label>{{ officer.name }}</label>
+      <p>
+        <b>{{ officer.officer_role }}</b>
+      </p>
+    </div>
+  </ng-container>
+</div>

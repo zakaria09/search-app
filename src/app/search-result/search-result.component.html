@@ -1,0 +1,21 @@
+<a
+class="back"
+(click)="goBack()">
+Back to search
+</a>
+<div class="center">
+  <h1>Search Results</h1>
+  <ul
+    class="list-group mt-3 mb-2"
+    *ngFor="let result of ($results | async)">
+    <li class="list-group-item">
+      <a [routerLink]="['/company-detail', result.company_number]">
+        {{ result.title }}
+      </a>
+      <p>{{ result.description }}</p>
+      <p>
+        {{ result.address_snippet }}
+      </p>
+    </li>
+  </ul>
+</div>

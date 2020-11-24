@@ -1,0 +1,40 @@
+<a
+  class="back"
+  (click)="goBack()">
+  Back to results
+</a>
+<div class="card" *ngFor="let company of companyInfo">
+  <div class="m-3">
+    <h1>{{ company.title }}</h1>
+    <span>Company number: <b>{{ companyNumber }}</b></span>
+  </div>
+  <div class="card-body">
+    <label class="card-text">
+      Registered office address
+    </label>
+    <p>
+      <b>{{ company.address_snippet }}</b>
+    </p>
+    <label class="card-text">
+      Company status
+    </label>
+    <p>
+      <b>{{ company.company_status | titlecase }}</b>
+    </p>
+    <label class="card-text">
+      Company Type
+    </label>
+    <p>
+      <b>{{ company.company_type | titlecase }}</b>
+    </p>
+    <label class="card-text">
+      Incorporated on
+    </label>
+    <p>
+      <b>{{ company.date_of_creation | date: 'd MMMM yyyy' }}</b>
+    </p>
+    <label class="card-text">
+      <a [routerLink]="['/officers-list', company.company_number]">List Officers</a>
+    </label>
+  </div>
+</div>
