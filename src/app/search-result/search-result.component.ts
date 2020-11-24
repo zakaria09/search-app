@@ -28,10 +28,7 @@ export class SearchResultComponent implements OnInit {
   }
 
   getResults(term) {
-    return this.seachService.searchCompany(term)
-      .pipe(
-        pluck('items')
-      );
+    return this.seachService.searchCompany(term);
   }
 
   goBack() {

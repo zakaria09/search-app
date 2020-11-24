@@ -27,9 +27,7 @@ export class SearchComponent implements OnInit {
   submit() {
     const { searchTerm } = this.searchForm.value;
     if (!this.searchForm.invalid && searchTerm.trim()) {
-      this.router.navigate(['search-result', searchTerm])
-      // this.seachService.searchCompany(searchTerm)
-      //   .subscribe(result => console.log(result))
+      this.router.navigate(['search-result', searchTerm]);
     }
   }
 }
